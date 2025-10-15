@@ -137,4 +137,4 @@ Automate data ingestion from JIRA / GitHub Issues APIs
 
 MIT License © 2025 Kandoti Venkata Anirudh Sankarshan
 
-### 📁 Folder Structure
+
