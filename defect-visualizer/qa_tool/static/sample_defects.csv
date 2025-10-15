@@ -1,0 +1,9 @@
+id,module,severity,error_type,description,occurrence_date
+1,Auth,High,NullPointer,Null pointer when token is expired in Auth,2025-03-10
+2,Payment,Critical,WrongCalculation,Incorrect total calculation in Payment during checkout,2025-04-01
+3,UI,Low,UI-Bug,UI overflow when displaying long usernames in UI,2025-02-15
+4,Reporting,Medium,WrongCalculation,Incorrect date parsing in Reporting leading to wrong report,2025-01-20
+5,Search,High,Timeout,Timeout calling external API from Search during high load,2025-06-05
+6,Notification,Medium,MissingPermission,Missing permission check in Notification leading to security issue,2025-05-12
+7,Payment,High,Timeout,Timeout on payment provider callback in Payment,2025-04-25
+8,Auth,Medium,RaceCondition,Race condition when concurrent login requests hit Auth,2025-03-22

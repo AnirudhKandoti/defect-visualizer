@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QA Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .chart { margin: 20px 0; }
+    table { border-collapse: collapse; width: 100%; max-width: 900px; }
+    td, th { padding:8px 12px; border:1px solid #ddd; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>QA Defect Dashboard</h1>
+  <p><a href="{% url 'qa_tool:upload' %}">Upload new file</a></p>
+
+  <div class="chart">
+    {{ bar_div|safe }}
+  </div>
+
+  <div class="chart">
+    {{ pie_div|safe }}
+  </div>
+
+  <div class="chart">
+    {{ heat_div|safe }}
+  </div>
+
+  <h2>Top Clusters</h2>
+  <ul>
+    {% for cid, desc, size in top_clusters %}
+      <li><b>Cluster {{ cid }}</b> (size: {{ size }}): {{ desc }}</li>
+    {% empty %}
+      <li>No clusters found</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Module Risk Table (Top)</h2>
+  <table>
+    <tr><th>Module</th><th>Defect Count</th><th>Avg Severity Weight</th><th>Unique Clusters</th><th>Risk Score</th></tr>
+    {% for row in module_table %}
+      <tr>
+        <td>{{ row.module }}</td>
+        <td>{{ row.defect_count }}</td>
+        <td>{{ row.avg_severity_weight|floatformat:2 }}</td>
+        <td>{{ row.unique_clusters }}</td>
+        <td>{{ row.risk_score|floatformat:3 }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+</body>
+</html>
