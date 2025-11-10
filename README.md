@@ -11,9 +11,6 @@
 **Defect Pattern Analysis & Visualization Tool** is a data-driven Quality Assurance (QA) prototype that enables **risk-based testing** through **defect clustering and visualization**.  
 It analyzes historical defect logs, detects recurring error patterns, and calculates module-level risk scores — helping QA teams prioritize testing on high-risk components.
 
-This project was built as part of the scope of a Master’s thesis proposal:  
-> *“Risk-based testing through data analysis in Quality Assurance.”*
-
 ---
 
 ### 🧩 Features
